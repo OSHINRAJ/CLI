@@ -33,7 +33,6 @@ unsigned char **parse_line(unsigned char *line, unsigned int *count) {
 	}
 	if (init_cnt == 1)
 		cnt++;
-	printf("\n====== argc : %d ======\n", cnt);
 	tokens  = malloc((cnt + 1) * sizeof(char *));
 	if (tokens == NULL)
 		return NULL;
