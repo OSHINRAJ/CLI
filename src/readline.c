@@ -33,7 +33,7 @@ unsigned char *read_line(unsigned char *promt)
 {
 	char ch;
 	int i, length = 0, pos = 0;
-	unsigned char *cmdBuffer = (unsigned char *)malloc(40* sizeof(char));
+	unsigned char *cmdBuffer = (unsigned char *)malloc(MAX_CMD_LENGTH * sizeof(char));
 	printf("\n%s", promt);
 	while(1) {
 		for (i = pos; i < length; i++)
@@ -44,6 +44,7 @@ unsigned char *read_line(unsigned char *promt)
 				printf("\n%s", promt);
 				continue;
 			} else {
+				printf("\n");
 				return cmdBuffer;
 			}
 		}
@@ -87,13 +88,15 @@ unsigned char *read_line(unsigned char *promt)
 			printf("%s%s", promt, cmdBuffer);
 		}
 		if (ch != '\n' && ch != '\b' && ch != '\033' && ch != 127 && ch != 8) {
-			length++;
-			for (i = length; i >=pos; i--) {
-				cmdBuffer[i+1] = cmdBuffer[i];
+			if (length < MAX_CMD_LENGTH) {
+				length++;
+				for (i = length; i >=pos; i--) {
+					cmdBuffer[i+1] = cmdBuffer[i];
+				}
+				cmdBuffer[pos] = ch;
+				cmdBuffer[length] = '\0';
+				pos++;
 			}
-			cmdBuffer[pos] = ch;
-			cmdBuffer[length] = '\0';
-			pos++;
 			printf("%c[2K\r", 27);
 			printf("%s%s", promt, cmdBuffer);
 		}
