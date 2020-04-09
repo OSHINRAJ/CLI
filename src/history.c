@@ -83,6 +83,7 @@ int clearHistoryList()
 void checkCmd()
 {
 	struct list *node  = hist.hist_list;
+	printf("\n");
 	while ( node != NULL) {
 		printf("[%s]\t:\t%s\n", __DATE__, node->buf);
 		node = node->up;
