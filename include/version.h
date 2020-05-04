@@ -11,6 +11,6 @@ struct version {
 	int valid;
 };
 
-#define BUILD_VERSION(author, proj, last_release) static struct version VERSION __attribute__((__used__, __section__(".version_data"))) = { __DATE__, __TIME__, author, "MY_COMPANY", proj, last_release, 1}
+#define BUILD_VERSION(author, proj, company, last_release) static struct version VERSION __attribute__((__used__, __section__(".version_data"))) = { __DATE__, __TIME__, author, company, proj, last_release, 1}
 
 #endif

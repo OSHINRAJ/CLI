@@ -12,7 +12,7 @@
 #include "history.h"
 #include "readline.h"
 
-BUILD_VERSION("OSHINRAJ", "MY_CLI", "1");
+BUILD_VERSION("OSHINRAJ", "MY_CLI", "MY_CMPNY", "1");
 extern entry_t cmd_table[];
 
 /************************************************************************
