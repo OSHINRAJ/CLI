@@ -11,6 +11,15 @@
 #include <string.h>
 #include "parseline.h"
 
+
+/************************************************************************
+ * @Func	:	parse_line
+ * @brief	:	parse a command line string to its sub-strings and store 
+ *				the sub-string to an array, calculate the no.of agruments
+ * @Param1	:	command line string.	
+ * @Param2	:	pointer to the argument count.
+ * @Return	:	array of pointers to the command argumnets.
+ ************************************************************************/
 unsigned char **parse_line(unsigned char *line, unsigned int *count) {
 
 	char *ch , **tokens = NULL;

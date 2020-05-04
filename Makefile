@@ -28,4 +28,4 @@ $(OBJ_DIR):
 
 clean:
 	    $(RM) $(OBJ)
-	    $(RM) -rf $(BIN_DIR)
+	    $(RM) -rf $(BIN_DIR) $(OBJ_DIR)

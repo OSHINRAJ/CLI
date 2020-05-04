@@ -15,6 +15,12 @@
 #include "history.h"
 #include "readline.h"
 
+/************************************************************************
+ * @Func	:	getch
+ * @brief	:	
+ * @Param	:	
+ * @Return	:	
+ ************************************************************************/
 int getch( )
 {
 	struct termios oldt,
@@ -29,6 +35,12 @@ int getch( )
 	return ch;
 }
 
+/************************************************************************
+ * @Func	:	read_line
+ * @brief	:	Read the line of command from the CLI
+ * @Param	:	Command promt string
+ * @Return	:	pointer to the command string.
+ ************************************************************************/
 unsigned char *read_line(unsigned char *promt)
 {
 	char ch;

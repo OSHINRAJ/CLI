@@ -15,7 +15,12 @@
 BUILD_VERSION("OSHINRAJ", "MY_CLI", "1");
 extern entry_t cmd_table[];
 
-
+/************************************************************************
+ * @Func	:	main()
+ * @brief	:	Main function for the command line interface(CLI)
+ * @Param	:	Nill
+ * @Return	:	0 for success and -1 for failure
+ ************************************************************************/
 
 int main()
 {

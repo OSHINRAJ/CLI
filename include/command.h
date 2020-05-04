@@ -1,7 +1,7 @@
 #ifndef __COMMAND_H__
 #define __COMMAND_H__
 
-#define NO_OF_CMDS 7
+#define NO_OF_CMDS 8
 
 #define color_red() printf("\033[0;31m");
 #define color_reset() printf("\033[0m");
@@ -18,5 +18,6 @@ int cmd_4(unsigned int argc, unsigned char **argv);
 int cmd_5(unsigned int argc, unsigned char **argv);
 int system_cmd(unsigned int argc, unsigned char **argv);
 int cmd_7(unsigned int argc, unsigned char **argv);
+int help_cmd(unsigned int argc, unsigned char **argv);
 
 #endif // __COMMAND_H__

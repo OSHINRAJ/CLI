@@ -8,6 +8,12 @@
 
 history_t hist = {NULL, 0, 0};
 
+/************************************************************************
+ * @Func	:	addHistory	
+ * @brief	:	add command to the history buffer.
+ * @Param	:	command buffer to be added to history.
+ * @Return	:	0 for sucess and -1 for failure.
+ ************************************************************************/
 int addHistory(char *cmd)
 {		
 	struct list *temp = (struct list *)malloc(sizeof(struct list));
@@ -27,6 +33,12 @@ int addHistory(char *cmd)
 	return 0;
 }
 
+/************************************************************************
+ * @Func	:	getHistory	
+ * @brief	:	get command form history buffer.
+ * @Param	:	direction of the arrow key pressed.
+ * @Return	:	pointer to the history command buffer.
+ ************************************************************************/
 char *getHistory(int dir)
 {
 	int i;
@@ -60,6 +72,13 @@ char *getHistory(int dir)
 		return node->buf;
 	}
 }
+
+/************************************************************************
+ * @Func	:	clearHistory	
+ * @brief	:	dump the cmd history to a file & clear history buffer.
+ * @Param	:	Nill
+ * @Return	:	0 for success and -1 for failure.
+ ************************************************************************/
 int clearHistoryList()
 {
 	FILE *fp = fopen(HISTORY_FILE, "w+");
@@ -80,6 +99,13 @@ int clearHistoryList()
 	fclose(fp);
 	return 0;
 }
+
+/************************************************************************
+ * @Func	:	checkCmd	
+ * @brief	:	Sample function to print the command history buffer.
+ * @Param	:	Nill
+ * @Return	:	Nill
+ ************************************************************************/
 void checkCmd()
 {
 	struct list *node  = hist.hist_list;
