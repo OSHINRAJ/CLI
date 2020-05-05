@@ -99,7 +99,11 @@ unsigned char *read_line(unsigned char *promt)
 			printf("%c[2K\r", 27);
 			printf("%s%s", promt, cmdBuffer);
 		}
-		if (ch != '\n' && ch != '\b' && ch != '\033' && ch != 127 && ch != 8) {
+		if (ch == 0x0C) {
+			system("clear");
+			printf("%s%s", promt, cmdBuffer);
+		}
+		if (ch != '\n' && ch != '\b' && ch != '\033' && ch != 127 && ch != 8 && ch != 0x0C) {
 			if (length < MAX_CMD_LENGTH) {
 				length++;
 				for (i = length; i >=pos; i--) {
